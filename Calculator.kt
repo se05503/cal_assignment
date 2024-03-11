@@ -3,7 +3,7 @@ package com.example.calculatorassignment
 import com.example.calculator_assignment.AbstractOperation
 
 class Calculator(private val operation: AbstractOperation) {
-    fun calculate(num1:Int, num2:Int):Double {
+    fun operate(num1:Int, num2:Int):Double {
         return operation.operate(num1,num2)
     }
 }
