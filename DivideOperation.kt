@@ -1,27 +1,27 @@
 package com.example.calculatorassignment
 
-class DivideOperation:Calculator(), EventCalculator {
-    override fun cal() {
-        while(true) {
-            print("첫번째 인자를 입력해주세요 : ")
-            var num1 = readLine()!!.toInt()
-            print("두번째 인자를 입력해주세요 : ")
-            var num2 = readLine()!!.toInt()
-            println("결과 값: ${num1/num2}")
-            print("나눗셈 몫 연산을 계속하고 싶으시면 1 아니면 0, 이벤트를 원하시면 -1을 입력해주세요:")
-            val opt = readLine()!!.toInt()
-            if(opt==0) break
-            if(opt==-1) eventCal()
-        }
-    }
+import com.example.calculator_assignment.AbstractOperation
 
-    // 인터페이스 추가
-    override fun eventCal() {
-//        TODO("Not yet implemented")
-        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
-        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
-        println("☆☆☆☆☆☆☆나눗셈☆☆☆☆☆☆☆☆")
-        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
-        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
+class DivideOperation: AbstractOperation() {
+    override fun operate(num1: Int, num2: Int): Double {
+        require(num2!=0) {ArithmeticException("0으로 나누면 안됩니다!")}
+        return num1.toDouble()/num2
     }
 }
+//import com.example.calculator_assignment.Operation
+//
+//class DivideOperation(override var num1: Int, override var num2: Int): Operation(), EventCalculator {
+//    override fun operate():Int {
+//        return num1/num2
+//    }
+//
+//    // 인터페이스 추가
+//    override fun eventCal() {
+////        TODO("Not yet implemented")
+//        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
+//        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
+//        println("☆☆☆☆☆☆☆나눗셈☆☆☆☆☆☆☆☆")
+//        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
+//        println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆")
+//    }
+//}
