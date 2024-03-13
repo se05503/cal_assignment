@@ -8,19 +8,33 @@ class MyStack {
         val tokenizedArray = toTokenizedArray(expression)
         var postFixExpression = ""
         for (e in tokenizedArray) {
-            if (e == "*" || e == "/" || e == "+" || e == "-") {
-                if (stack != null && stack.peek() != "(") {
-                    postFixExpression += stack.pop() + " "
-                    stack.push(e)
-                } else stack.push(e)
-            } else if (e == "(") {
-                stack.push(e)
-            } else if (e == ")") {
-                postFixExpression += stack.pop() + " "
-                stack.pop()
-            } else {
-                postFixExpression += "$e "
+            when(e) {
+                "+","-","*","/" -> {
+
+                }
+                "(" -> {
+
+                }
+                ")" -> { // 나는 modify branch 이다..........
+
+                }
+                else -> {
+
+                }
             }
+//            if (e == "*" || e == "/" || e == "+" || e == "-") {
+//                if (stack != null && stack.peek() != "(") {
+//                    postFixExpression += stack.pop() + " "
+//                    stack.push(e)
+//                } else stack.push(e)
+//            } else if (e == "(") {
+//                stack.push(e)
+//            } else if (e == ")") {
+//                postFixExpression += stack.pop() + " "
+//                stack.pop()
+//            } else {
+//                postFixExpression += "$e "
+//            }
         }
         if (stack != null) {
             postFixExpression += stack.pop()
