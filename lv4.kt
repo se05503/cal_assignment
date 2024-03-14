@@ -7,9 +7,6 @@ import com.example.calculatorassignment.MultiplyOperation
 import com.example.calculatorassignment.SubstractOperation
 
 fun main() {
-    println("Hello!")
-
-fun main() {
  val addCalc = Calculator(AddOperation())
  println("10더하기 20 결과는 : ${addCalc.operate(10, 20)} 입니다")
 
@@ -26,3 +23,4 @@ fun main() {
  val calResult = myStack.getPostFixExpressionOperation("(2+4) * 4 / 2 * 12")
  println("복합 연산 계산 결과 : ${calResult}")
 }
+
