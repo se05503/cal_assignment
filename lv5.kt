@@ -8,4 +8,3 @@ fun main() {
     var result = MyStack.getAnswer(outputstr)
     print("연산 결과 : ${result}")
 }
-//d
